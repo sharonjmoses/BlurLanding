@@ -4,3 +4,135 @@ body{
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+.showcase::after{
+    content:'';
+    height: 80vh;
+    width: 100%;
+    background-image: url(wall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 500ms;
+
+}
+
+.showcase:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.showcase:hover .content{
+    filter: blur(90px);
+    -webkit-filter: blur(90px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+
+.content .title{
+    font-size: 5rem;
+    margin-top: 1rem;
+}
+
+.content.text{
+line-height: 1.7;
+margin-top: 1rem;
+
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light{
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark{
+    background: #333;
+    color:#f4f4f4;
+}
+
+.logo {
+    height: 6px;
+    width: 6px;
+  }
+
+
+  footer{
+    padding: 2.2rem;
+  }
+
+  footer p{
+      margin: 0;
+  }
+
+  /* Small Screens */
+
+  @media (max-width: 560px){
+      .showcase::after{
+          height: 35vh;
+      }
+      .content{
+          top: 5%;
+          margin-top: 5px;
+      }
+      .grid-3, .grid-2{
+        grid-template-columns: 1fr;
+      }
+      .services div{
+          border-bottom: #333 dashed 1px;
+          padding: 2.5rem 1rem;
+      }
+  }
+
+  @media (max-width: 768px){
+    .showcase::after{
+        height: 35vh;
+    }
+    .content{
+        top: 5%;
+        margin-top: 5px;
+    }
+    
+    .services div{
+        border-bottom: #333 dashed 1px;
+        padding: 2.5rem 1rem;
+    }
+}
